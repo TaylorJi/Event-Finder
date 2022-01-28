@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ... (fill this in later)
-* Hi my name is Sangwoo. I am excited about this project because....
+* Hi my name is Sangwoo. I am excited about this project because this looks challenging.
 
 	
 ## Technologies
