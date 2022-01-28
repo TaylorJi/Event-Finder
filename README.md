@@ -7,8 +7,9 @@
 ## General Info
 This browser based web application to ... (fill this in later)
 * Hi my name is Sangwoo. I am excited about this project because....
+* Hi my name is Sam. I'm excited about this project because its giving me a chance to do team work and that's great.
 
-	
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
