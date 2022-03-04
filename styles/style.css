@@ -1,4 +1,4 @@
-ul {
+/* ul {
     background-color: gray;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -17,4 +17,17 @@ ul li {
     align-items: center;
     align-content: center;
     padding-left: 40%;
-  } 
+  }  */
+
+.navbar-brand {
+    padding: 1em 2em 1em 1.5em;
+} 
+
+.nav-item {
+    padding:1em 2em 1em;
+}
+
+.nav-item:hover{
+    background-color:rgba(216, 216, 216, 0.77);
+}
+
