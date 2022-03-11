@@ -2,7 +2,7 @@ function populateCardsDynamically() {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
     
-    db.collection("Events").get()
+    db.collection("events").get()
         .then(allEvents => {
             allEvents.forEach(doc => {
                 var eventTitle = doc.data().title; //gets the name field
