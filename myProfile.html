@@ -36,7 +36,8 @@
 
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/style.css">
+  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link rel="stylesheet" href="./styles/profileStyle.css">
 </head>
 
 <body>
@@ -45,24 +46,37 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Cards -->
- 
 
-  <div class="card" style="width: 18rem;">
-    <img src="./images/johndoe.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"> <span id = "name-goes-here"></span></h5>
-      <p class="card-text">Likes to attend large events and eat food with friends</p>
+  <div id="container1">
+    <div id="profileInfo">
+      <div class="card" style="width: 18rem;">
+        <img src="./images/johndoe.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> <span id="name-goes-here"></span></h5>
+          <p class="card-text">Likes to attend large events and eat food with friends</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <!--updated the profile to display the following. -Michaela -->
+          <li class="list-group-item">Home</li>
+          <li class="list-group-item">Personal Info</li>
+          <li class="list-group-item">Pinned Events</li>
+          <li class="list-group-item">Other</li>
+          <!-- <li class="list-group-item">Other</li> -->
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Blog</a>
+          <a href="#" class="card-link">instagram</a>
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Account Settings</li>
-      <li class="list-group-item">Username</li>
-      <li class="list-group-item">Email</li>
-      <li class="list-group-item">pinned events</li>
-      <li class="list-group-item">Other</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Blog</a>
-      <a href="#" class="card-link">instagram</a>
+    <div id="welcomeHero">
+      <div class="container-fluid bg-light text-dark p-5">
+        <div class="container bg-success p-5">
+          <h1 class="display-4 bg-warning bg-gradient">Good morning, <span id="name-goes-here"></span></h1>
+          <hr>
+          <p>Quote of the day: <span id="quote-goes-here">...</span></p>
+        </div>
+      </div>
     </div>
   </div>
 
