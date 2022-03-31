@@ -3,31 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My BCIT Project</title>
+  <title>Event Finder</title>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap Library CSS CDN go here -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-
   <!-- Boostrap Library JS CDN  go here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-
-  <!-- Firebase 8 Library related CSS CDN go here -->
-  <!-- Firebase 8 Library related JS CDN go here-->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
 
   <!-- Other libraries go here -->
 
@@ -36,8 +30,7 @@
 
 
   <!-- Link to styles of your own -->
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-  <link rel="stylesheet" href="./styles/profileStyle.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
@@ -45,55 +38,50 @@
   <!-- nav bar -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!-- Cards -->
-
-  <div id="container1">
-    <div id="profileInfo">
-      <div class="card" style="width: 18rem;">
-        <img src="./images/johndoe.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> <span id="name-goes-here"></span></h5>
-          <p class="card-text">Likes to attend large events and eat food with friends</p>
+  <!-- body -->
+  <div class="container">
+    <h1>Info for: <span id="nameOfUser"></span></h1>
+    <form>
+      <fieldset class="mb-3" id="personalInfoFields" disabled>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="nameInput" class="form-control" placeholder="Enter your name" pattern="[A-Za-z]{0,45}" required>
         </div>
-        <ul class="list-group list-group-flush">
-          <!--updated the profile to display the following. -Michaela -->
-          <li class="list-group-item">Home</li>
-          <li class="list-group-item"><a href="./personalInfo.html">Personal Info</a></li>
-          <li class="list-group-item">Pinned Events</li>
-          <li class="list-group-item">Other</li>
-          <!-- <li class="list-group-item">Other</li> -->
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Blog</a>
-          <a href="#" class="card-link">instagram</a>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="emailInput" class="form-control" placeholder="Enter your email" required>
         </div>
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" id="phoneInput" class="form-control" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        </div>
+        <div class="form-group">
+          <label>Birthday</label>
+          <input type="date" id="birthdayInput" class="form-control" placeholder="Enter your birthday">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+        </div>
+      </fieldset>
+      <div class="d-flex justify-content-end mt-5">
+        <button type="button" class="btn btn-secondary" onclick="edit()">Edit</button>
+        <span style="width: 10px"></span>
+        <button type="button" class="btn btn-info" onclick="save()">Save</button>
       </div>
-    </div>
-    <div id="welcomeHero">
-      <div class="container-fluid bg-light text-dark p-5">
-        <div class="container bg-success p-5">
-          <h3 class="display-4 bg-warning bg-gradient">Welcome to your profile,  <span id="newName"></span></h3>
-          <hr>
-          <!-- <p>Quote of the day: <span id="quote-goes-here">...</span></p> -->
-        </div>
-      </div>
-    </div>
+    </form>
   </div>
 
-
-  <!--sticky footer-->
-
-  <!-- copyright footer -->
-
+  <!-- footer -->
+  <!-- <nav id="footerPlaceholder"></nav> -->
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_TEAM32.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
-  <script src="./scripts/firebaseAPI_TEAM32.js"></script>
-  <script src="./scripts/profile.js"></script>
-
+  <script src="./scripts/personalInfo.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -103,6 +91,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
 
 </body>
 
