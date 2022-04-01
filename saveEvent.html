@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-
   <title>Event Finder</title>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
@@ -39,29 +38,34 @@
   <!-- nav bar -->
   <nav id="navbarPlaceholder"></nav>
 
+    <!-- the body of your page goes here -->
+    <!-- stuff -->
+    <!-- the body of your page goes here -->
+    <div class="container">
+        <h1>My Saved Events</h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="eventCardGroup" class="row row-cols-auto">
 
-      <!-- Event Card Templates -->
-      <template id="eventCardTemplate">
-        <div class="card" style="width: 25rem;">
-            <img class="card-img-top">
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates for general use, not displayed -->
+    <template id="CardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem;">
+            <img class="card-image card-img-top" src=" ..." alt="...">
             <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-time-start">placeholder</p>
-                <p class="card-time-end">placeholder</p>
-                <p class="card-details">placeholder</p>
-                <a href="event.html" class="btn btn-primary" style="float: right">More details</a>
-                <i class="material-icons">bookmark_border</i>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-length">placeholder</p>
+                <a href="review.html" class="link-primary">Write a review</a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a class="btn btn-primary card-href">Get Details</a>
             </div>
         </div>
     </template>
-  
-    <!-- Container/placeholder for card population -->
-  
-    <div class="container">
-      <div id="eventCardGroup" class="row row-cols-auto">
-      </div>
-    </div>
-  </div>
+
 
   <!-- footer -->
   <!-- <nav id="footerPlaceholder"></nav> -->
@@ -70,13 +74,11 @@
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
   <script src="./scripts/firebaseAPI_TEAM32.js"></script>
+  <!-- <script src="./scripts/main.js"></script> -->
+  <script src="./scripts/saveEvent.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/main.js"></script>
-
-  
-  
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<!-- 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

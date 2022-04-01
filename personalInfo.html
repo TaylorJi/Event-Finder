@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-
   <title>Event Finder</title>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
@@ -39,28 +38,38 @@
   <!-- nav bar -->
   <nav id="navbarPlaceholder"></nav>
 
-
-      <!-- Event Card Templates -->
-      <template id="eventCardTemplate">
-        <div class="card" style="width: 25rem;">
-            <img class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-time-start">placeholder</p>
-                <p class="card-time-end">placeholder</p>
-                <p class="card-details">placeholder</p>
-                <a href="event.html" class="btn btn-primary" style="float: right">More details</a>
-                <i class="material-icons">bookmark_border</i>
-            </div>
+  <!-- body -->
+  <div class="container">
+    <h1>Info for: <span id="nameOfUser"></span></h1>
+    <form>
+      <fieldset class="mb-3" id="personalInfoFields" disabled>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="nameInput" class="form-control" placeholder="Enter your name" pattern="[A-Za-z]{0,45}" required>
         </div>
-    </template>
-  
-    <!-- Container/placeholder for card population -->
-  
-    <div class="container">
-      <div id="eventCardGroup" class="row row-cols-auto">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="emailInput" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" id="phoneInput" class="form-control" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        </div>
+        <div class="form-group">
+          <label>Birthday</label>
+          <input type="date" id="birthdayInput" class="form-control" placeholder="Enter your birthday">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+        </div>
+      </fieldset>
+      <div class="d-flex justify-content-end mt-5">
+        <button type="button" class="btn btn-secondary" onclick="edit()">Edit</button>
+        <span style="width: 10px"></span>
+        <button type="button" class="btn btn-info" onclick="save()">Save</button>
       </div>
-    </div>
+    </form>
   </div>
 
   <!-- footer -->
@@ -72,11 +81,8 @@
   <script src="./scripts/firebaseAPI_TEAM32.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
-  <script src="./scripts/main.js"></script>
-
-  
-  
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  <script src="./scripts/personalInfo.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -84,7 +90,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
 
 
 </body>
