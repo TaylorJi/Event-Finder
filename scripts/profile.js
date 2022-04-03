@@ -40,7 +40,7 @@ function insertName2() {
                //method #1:  insert with html only
                //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
                //method #2:  insert using jquery
-               $("#newName").text(user_Name);                         //using jquery
+               $("#newName").text(user_Name);                         
             })
         } else {
             // No user is signed in.
