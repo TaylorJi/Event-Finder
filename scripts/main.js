@@ -52,7 +52,9 @@ function populateCardsDynamically() {
                 testEventCard.querySelector('.card-time-start').innerHTML = eventTimeStart;
                 testEventCard.querySelector('.card-time-end').innerHTML = eventTimeEnd;
                 testEventCard.querySelector('.card-details').innerHTML = eventDetails;
-                testEventCard.querySelector('a').onclick = () => setDocData(docID);
+                // testEventCard.querySelector('a').onclick = () => setDocData(docID);
+                testEventCard.querySelector('a').href = "event.html?eventid=" + docID;
+                
                 testEventCard.querySelector('i').id = 'save-' + docID;
                 // this line will call a function to save the hikes to the user's document             
                 testEventCard.querySelector('i').onclick = () => saveBookmark(docID);

@@ -1,10 +1,11 @@
-
+const urlParams = new URLSearchParams(window.location.search);
+const eventID = urlParams.get("eventid");
 
 function populateEventPage() {
-    let documentID = localStorage.getItem("documentID");
+    // let documentID = localStorage.getItem("documentID");
     let eventPageTemplate = document.getElementById("eventPageTemplate");
     let eventPage = document.getElementById("eventPage");
-    var docRef = db.collection("events").doc(documentID);
+    var docRef = db.collection("events").doc(eventID);
 
     docRef.get().then((doc) => {
         var eventTitle = doc.data().title;
