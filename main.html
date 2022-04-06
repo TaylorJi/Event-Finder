@@ -47,22 +47,23 @@
       <fieldset id="fieldset">
         <div class="form-group">
           <legend id="legend">Find an Event</legend>
-          <label for="eventCategory123" id="category123">Category</label>
-  
-          <select class="form-control" id="eventCategory123">
-            <option>Music</option>
+
+          <label for="formCategoryBox">Category</label>
+          <select class="form-control" id="formCategoryBox">
+            <option>Any</option>
+            <option>Show</option>
             <option>Performance</option>
-            <option>Concert</option>
             <option>Theatrical</option>
-            <option>Dance</option>
+            <option>Dancing</option>
+            <option>Other</option>
           </select>
-          <label for="eventDate123" id="date123">Date:</label>
-          <input type="date" class="form-control" id="eventDate123" placeholder="Date">
-          <label for="eventTime123" id="time123">Time:</label>
-          <input type="time" class="form-control" id="eventTime123" placeholder="Time">
+          <label for="formDateBox">Date:</label>
+          <input type="date" class="form-control" id="formDateBox">
+          <label for="formTimeBox">Time:</label>
+          <input type="time" class="form-control" id="formTimeBox">
 
           <div class="d-flex justify-content-end">
-            <button type="button" id = "buttonFind" class="btn btn-lg btn-primary"  onclick="find()">Find</button>
+            <button type="button" id ="buttonFind" class="btn btn-lg btn-primary"  onclick="findEvents()">Find</button>
           </div>
         </div>
       </fieldset>
@@ -93,8 +94,8 @@
   <!-- <div class="container">
     <div id="eventCardGroup" class="row row-cols-auto">
     </div>
-  </div> -->
   </div>
+  </div> -->
 
   <!-- footer -->
   <!-- <nav id="footerPlaceholder"></nav> -->
@@ -107,17 +108,6 @@
   <script src="./scripts/script.js"></script>
   <script src="./scripts/main.js"></script>
 
-
-
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script> -->
 
 
 </body>

@@ -1,42 +1,15 @@
-var currentUser;
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        currentUser = db.collection("users").doc(user.uid); //global
-        console.log(currentUser);
+const urlParams = new URLSearchParams(window.location.search);
+const searchCategory = urlParams.get("category");
+const searchDate = urlParams.get("date");
+const searchTime = urlParams.get("time");
 
-        // the following functions are always called when someone is logged in
-        // read_display_Quote();
-        // insertName();
-        // populateCardsDynamically();
-    } else {
-        // No user is signed in.
-        console.log("No user is signed in");
-        window.location.href = "login.html";
-    }
-});
-
-function writeEvent() {
-    var eventsRef = db.collection("events");
-
-    //define a variable for the collection you want to create in Firestore to populate data
-    eventsRef.add({
-        id: "BBY01",
-        name: "Burnaby Lake Tour", 
-        city: "Burnaby",
-        province: "BC",
-        // level: "easy",
-        // length: 10, //number value
-        // length_time: 60, //number value
-        last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
-    })
-};
-
-  
+console.log(searchCategory,searchDate,searchTime)
 
 function populateCardsDynamically() {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
     
+
     db.collection("events").get()
         .then(allEvents => {
             allEvents.forEach(doc => {
@@ -66,9 +39,6 @@ function populateCardsDynamically() {
 }
 populateCardsDynamically();
 
-function setDocData(id){
-    localStorage.setItem ('docID', id);
-}
 
 function saveBookmark(docID) {
     currentUser.set({
@@ -82,4 +52,40 @@ function saveBookmark(docID) {
             //console.log(iconID);
             document.getElementById(iconID).innerText = 'bookmark';
         });
+}
+
+
+
+function findEvents() {
+    let formCategory = document.getElementById("formCategoryBox").value;
+    let formDate = document.getElementById("formDateBox").value;
+    let formTime = document.getElementById("formTimeBox").value;
+    let count = 0;
+
+    console.log(formCategory, formDate, formTime)
+
+    let finalURL = "main.html?";
+    if (formCategory) {
+        finalURL += "category=" + formCategory;
+        count = 1;
+    }
+    if (formDate) {
+        if (count == 1) {
+            finalURL += "&";
+        }
+        finalURL += "date=" + formDate;
+        count = 1;
+    }
+    if (formTime) {
+        if (count == 1) {
+            finalURL += "&";
+        }
+        finalURL += "time=" + formTime;
+        count = 1;
+    }
+
+
+    console.log(finalURL)
+    window.location.href = finalURL;
+
 }
