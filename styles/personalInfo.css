@@ -1,0 +1,99 @@
+/* ul {
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+ul li {
+    font-size: 100%;
+    background-color: gray;
+    margin-bottom: 2%;
+    display: inline;
+    float: center;
+    clear: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 40%;
+  }  */
+
+
+  .bg-primary {
+    background-color: #EEBA0B !important;
+  }
+
+  .bg-light{
+    background-color: #1B0D00 !important;
+  }
+  
+  .text-success{
+      color: #1B0D00 !important;
+      font-size: 18px;
+  }
+  
+  .navbar-brand {
+      padding: 1em 2em 1em 1.5em;
+      font-size: 23px;
+  
+  } 
+  
+  .nav-item {
+      padding:1em 1.5em 1em;
+  }
+  
+  .text-success:hover{
+      color:#fff4ac !important;
+  }
+  
+  .container{
+    margin-top: 20px;
+    margin-right:10px;
+    width:92%;
+  }
+
+  #nameInput{
+    padding:.7em;
+  }
+
+  #emailInput{
+    padding:.7em;
+  }
+
+  #phoneInput{
+    padding:.7em;
+  }
+
+  #birthdayInput{
+    padding:.7em;
+  }
+
+  #cityInput{
+    padding:.7em;
+  }
+
+  #infoFor{
+    color:#1B0D00;
+  }
+
+  .btn-info{
+    background-color: #391101 !important;
+    border-color: #391101;
+    color:white;
+    border: 2px solid #391101;
+  }
+
+  .btn-secondary{
+    background-color:#a18479;
+    border: 2px solid #a18479;
+
+  }
+
+  .btn:hover{
+    color:white;
+    background-color: #a18479;
+    border: 2px solid #EEBA0B;
+
+  }
+

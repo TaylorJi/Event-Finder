@@ -44,17 +44,39 @@ ul li {
     color:#fff4ac !important;
 }
 
+.bg-dark{
+  background-color: #1B0D00 !important;
+}
+
+.text-white{
+  color: #EEBA0B !important;
+}
+
 .text-warning{
   color:#1B0D00 !important;
 }
 
-/* .bg-dark{
-  background-color: #1B0D00 !important;
-} */
+.btn{
+  background-color: #1B0D00;
+  border: 1px solid #EEBA0B;
+}
 
-/* .text-white{
-  color: #EEBA0B !important;
-}  */
+.btn:hover{
+  background-color: #EEBA0B;
+  border: 1px solid #EEBA0B;
+}
+
+.btn-lg{
+  color:#EEBA0B;
+}
+
+
+
+.fs-5{
+  color:white;
+}
+
+
 
 @media (min-width: 0px) and (max-width: 991px) {
 
@@ -78,7 +100,7 @@ body{
 #section{
   grid-row: 2 / span 1;
   background-color: rgb(229, 255, 196);
-  background-image: url("../images/shows.png");
+  background-image: url("../images/event.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
@@ -91,6 +113,7 @@ body{
 
 .container{
   grid-row: 4 / span 1;
+  background-color: rgb(188, 188, 252);
   margin-left: 5%;
 }
 
@@ -99,8 +122,7 @@ body{
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  /* background-color: rgb(247, 238, 168); */
-  background-color:#e7c04083;
+  background-color: rgb(247, 238, 168);
 }
 
 #category123{
@@ -141,26 +163,21 @@ body{
 }
 
 .btn-primary{
-  background-color: #391101;
-  border-color: #391101;
+  background-color: rgb(251, 188, 99);
+  border-color: rgb(251, 188, 99);
   margin-bottom: 5%;
   margin-right: 43%;
 }
 
 .btn-primary:hover{
-  background-color: #573f36;
-  border-color:#573f36;
+  background-color: rgb(252, 167, 48);
+  border-color: rgb(252, 167, 48);
 }
 
 #legend{
   justify-content: center;
   margin-left: 35%;
   margin-top: 5%;
-  color: #1B0D00;
-}
-
-#firebaseui-auth-container{
-  margin-top:50px;
 }
 
 }
@@ -175,7 +192,7 @@ body{
   #container2{
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 5.5% 30% 30% 1fr;
+    grid-template-rows: 5.5% 30% 23% 1fr;
     grid-template-columns: 100%;
   }
   
@@ -187,7 +204,7 @@ body{
   #section{
     grid-row: 2 / span 1;
     background-color: rgb(229, 255, 196);
-    background-image: url("../images/shows.png");
+    background-image: url("../images/event.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -200,7 +217,7 @@ body{
   
   .container{
     grid-row: 4 / span 1;
-    /* background-color: rgb(188, 188, 252); */
+    background-color: rgb(188, 188, 252);
     margin-left: 5%;
   }
   
@@ -249,24 +266,22 @@ body{
     margin-bottom: 25px;
   }
   
-
   .btn-primary{
-    background-color: #391101;
-    border-color: #391101;
-    margin-bottom: 5%;
-    margin-right: 45%;
+    background-color: rgb(251, 188, 99);
+    border-color: rgb(251, 188, 99);
+    margin-bottom: 1%;
+    margin-right: 50%;
   }
   
   .btn-primary:hover{
-    background-color: #573f36;
-    border-color:#573f36;
+    background-color: rgb(252, 167, 48);
+    border-color: rgb(252, 167, 48);
   }
   
   #legend{
     justify-content: center;
-    margin-left: 45%;
-    margin-top: 5%;
-    color: #1B0D00;
+    margin-left: 43%;
+    margin-top: 2%;
   }
   
 

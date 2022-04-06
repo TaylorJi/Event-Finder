@@ -18,9 +18,49 @@ ul li {
     align-content: center;
     padding-left: 40%;
   }  */
+
+
+  .bg-primary {
+    background-color: #EEBA0B !important;
+  }
+
+  .bg-light{
+    background-color: #1B0D00 !important;
+  }
+  
+  .text-success{
+      color: #1B0D00 !important;
+      font-size: 18px;
+  }
+  
+  .navbar-brand {
+      padding: 1em 2em 1em 1.5em;
+      font-size: 23px;
+  
+  } 
+  
+  .nav-item {
+      padding:1em 1.5em 1em;
+  }
+  
+  .text-success:hover{
+      color:#fff4ac !important;
+  }
+  
+  .text-warning{
+    color:#1B0D00 !important;
+  }
+
+  .list-group-item{
+    text-align: center;
+  }
+
+  .card-text{
+    text-align: center;
+  }
 @media (min-width: 0px) and (max-width: 991px) {
 
-  .navbar-brand {
+.navbar-brand {
     padding: 1em 2em 1em 1.5em;
 } 
 
@@ -28,13 +68,9 @@ ul li {
     padding:1em 2em 1em;
 }
 
-.nav-item:hover{
-    background-color:rgba(216, 216, 216, 0.77);
-}
-
 #container1{
   display:grid;
-  grid-template-rows: 42% 58%;
+  grid-template-rows: 48% 52%;
   grid-template-columns: 100%;
   margin-left: 15px;
 }
@@ -43,6 +79,29 @@ ul li {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
   font-size: 10px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 15px;
+}
+
+.container-fluid{
+  border-radius: 1em;
+}
+
+.container{
+  border-radius: 1em;
+}
+
+.display-4{
+  border-radius: .5em;
+}
+
+#newName{
+  text-align: center;
+}
+
+#name-goes-here{
+  text-align: center;
 }
 
 #profileInfo{
@@ -60,6 +119,10 @@ ul li {
   
 }
 
+.bg-success{
+  background-color: rgb(247, 238, 168) !important;
+}
+
 }
 
 @media (min-width: 992px) {
@@ -71,10 +134,10 @@ ul li {
 .nav-item {
     padding:1em 2em 1em;
 }
-
+/* 
 .nav-item:hover{
     background-color:rgba(216, 216, 216, 0.77);
-}
+} */
 
 #container1{
   display:grid;
@@ -94,10 +157,34 @@ ul li {
   margin-left: 90px;
 }
 
+.container-fluid{
+  border-radius: 1em;
+}
+
+.container{
+  border-radius: 1em;
+}
+
+.display-4{
+  border-radius: .5em;
+}
+
+#newName{
+  text-align: center;
+}
+
+#name-goes-here{
+  text-align: center;
+}
+
 .display-4{
   font-size: 30px;
   padding: 1em;
   text-align: center;
+}
+
+.bg-success{
+  background-color: rgb(247, 238, 168) !important;
 }
 
 }
