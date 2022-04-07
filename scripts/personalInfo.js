@@ -56,7 +56,9 @@ function save(){
     userPhone = document.getElementById('phoneInput').value;
     userBirthday = document.getElementById('birthdayInput').value;
     userCity = document.getElementById('cityInput').value;
+   
 
+    if(!userName) {userName = "<Name>"}
     currentUser.update({
         name: userName,
         email: userEmail,

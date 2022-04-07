@@ -30,6 +30,7 @@
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/newPost.css">
 </head>
 
 <body>
@@ -44,16 +45,16 @@
     <br>
     <form>
       <div class="form-group">
-        <label for="eventTitle">Title</label>
+        <label for="eventTitle"><b>Title:</b></label>
         <input type="text" class="form-control" id="eventTitle" placeholder="Title">
         <br>
-        <label for="eventBody">Description:</label>
+        <label for="eventBody"><b>Description:</b></label>
         <textarea class="form-control" id="eventBody" rows="7"></textarea>
         <br>
-        <label for="eventAddress">Address:</label>
+        <label for="eventAddress"><b>Address:</b></label>
         <textarea class="form-control" id="eventAddress" rows="3"></textarea>
         <br>
-        <label for="eventCategory">Category</label>
+        <label for="eventCategory"><b>Category</b></label>
         <select class="form-control" id="eventCategory">
           <option>Any</option>
           <option>Show</option>
@@ -63,16 +64,16 @@
           <option>Other</option>
         </select>
         <br>
-        <label for="">Start time:</label>
+        <label for=""><b>Start time:</b></label>
         <input type="datetime-local" class="form-control" id="eventStartTime" placeholder="">
         <br>
-        <label for="">End time:</label>
+        <label for=""><b>End time:</b></label>
         <input type="datetime-local" class="form-control" id="eventEndTime" placeholder="" >
         <br>
-        <label for="">Image URL:</label>
+        <label for=""><b>Image URL:</b></label>
         <input type="text" class="form-control" id="bannerURL" placeholder="URL">
         <br>
-        <label for="">Image ID:</label>
+        <label for=""><b>Image ID:</b></label>
         <input type="text" class="form-control" id="imageID" placeholder="Image ID">
         <br>
         <br>
@@ -80,7 +81,7 @@
 
         <div class="d-flex justify-content-end">
           <button type="button" class="btn btn-lg btn-secondary pull-right" style="margin: 0 1rem;" onclick="">Cancel</button>
-          <button type="button" class="btn btn-lg btn-primary pull-right"  onclick="addEvent()">Post</button>
+          <button type="button" class="btn btn-lg btn-primary pull-right" onclick="addEvent()">Post</button>
         </div>
 
       </div>

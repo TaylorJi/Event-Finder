@@ -31,6 +31,7 @@
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/personalInfo.css">
 </head>
 
 <body>
@@ -40,29 +41,35 @@
 
   <!-- body -->
   <div class="container">
-    <h1>Info for: <span id="nameOfUser"></span></h1>
+    <h1 id="infoFor"><b>Info for: </b><span id="nameOfUser"></span></h1>
     <form>
       <fieldset class="mb-3" id="personalInfoFields" disabled>
         <div class="form-group">
-          <label>Name</label>
+          <label><b>Name:</b></label>
+    
           <input type="text" id="nameInput" class="form-control" placeholder="Enter your name" pattern="[A-Za-z]{0,45}" required>
+        <br>
         </div>
         <div class="form-group">
-          <label>Email</label>
+          <label><b>Email:</b></label>
           <input type="email" id="emailInput" class="form-control" placeholder="Enter your email" required>
         </div>
+        <br>
         <div class="form-group">
-          <label>Phone number</label>
+          <label><b>Phone number:</b></label>
           <input type="tel" id="phoneInput" class="form-control" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
         </div>
+        <br>
         <div class="form-group">
-          <label>Birthday</label>
+          <label><b>Birthday:</b></label>
           <input type="date" id="birthdayInput" class="form-control" placeholder="Enter your birthday">
         </div>
+        <br>
         <div class="form-group">
-          <label>City</label>
+          <label><b>City:</b></label>
           <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
         </div>
+        <br>
       </fieldset>
       <div class="d-flex justify-content-end mt-5">
         <button type="button" class="btn btn-secondary" onclick="edit()">Edit</button>
