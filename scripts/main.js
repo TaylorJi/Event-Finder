@@ -61,15 +61,20 @@ function populateCardsDynamically() {
                 var eventDetails = doc.data().body; 
                 var eventImgID = doc.data().imgID; 
                 var eventCategory = doc.data().category;
-                var eventTimeStart = doc.data().timeStart.toDate();
-                var eventTimeEnd = doc.data().timeEnd.toDate();
+                var timeStart = doc.data().timeStart.toDate(); 
+                var timeEnd = doc.data().timeEnd.toDate(); 
+                const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric'});
+                const timeFormatter = new Intl.DateTimeFormat('en-US', {hour: 'numeric', minute: 'numeric'});
+                var eventDate  = longEnUSFormatter.format(timeStart);
+                var eventTimeStart  = timeFormatter.format(timeStart);
+                var eventTimeEnd  = timeFormatter.format(timeEnd);
+
                 var docID = doc.id;
                 let testEventCard = eventCardTemplate.content.cloneNode(true);
-                
                 testEventCard.querySelector('.card-title').innerHTML = eventTitle;
+                testEventCard.querySelector('.card-date').innerHTML = eventDate;
                 testEventCard.querySelector('.card-time-start').innerHTML = eventTimeStart;
                 testEventCard.querySelector('.card-time-end').innerHTML = eventTimeEnd;
-                testEventCard.querySelector('.card-details').innerHTML = eventDetails;
                 // testEventCard.querySelector('a').onclick = () => setDocData(docID);
                 testEventCard.querySelector('a').href = "event.html?eventid=" + docID;
                 

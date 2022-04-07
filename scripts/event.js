@@ -11,9 +11,14 @@ function populateEventPage() {
         var eventTitle = doc.data().title;
         var eventDetails = doc.data().body; 
         var eventCategory = doc.data().imgID;
-        var eventTimeStart = doc.data().timeStart.toDate(); 
-        var eventTimeEnd = doc.data().timeEnd.toDate(); 
-        var eventDate = doc.data().timeEnd.toDate(); 
+        var timeStart = doc.data().timeStart.toDate(); 
+        var timeEnd = doc.data().timeEnd.toDate(); 
+        const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric'});
+        const timeFormatter = new Intl.DateTimeFormat('en-US', {hour: 'numeric', minute: 'numeric'});
+        var eventDate  = longEnUSFormatter.format(timeStart);
+        var eventTimeStart  = timeFormatter.format(timeStart);
+        var eventTimeEnd  = timeFormatter.format(timeEnd);
+
 
         console.log(doc.data().title);
         let testEventPage = eventPageTemplate.content.cloneNode(true);
