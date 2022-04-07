@@ -1,3 +1,9 @@
+const urlParams = new URLSearchParams(window.location.search);
+const searchCategory = urlParams.get("category");
+const searchDate = urlParams.get("date");
+const searchTime = urlParams.get("time");
+
+
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -14,10 +20,6 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-const urlParams = new URLSearchParams(window.location.search);
-const searchCategory = urlParams.get("category");
-const searchDate = urlParams.get("date");
-const searchTime = urlParams.get("time");
 
 console.log(searchCategory,searchDate,searchTime)
 
@@ -25,13 +27,38 @@ function populateCardsDynamically() {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
     
+    let paramC1;
+    let paramC2;
+    let paramT1;
+    let paramT2;
+    let paramT3;
 
-    db.collection("events").get()
+
+    if (searchCategory) {
+        paramC1 = "category"
+        paramC2 = searchCategory;
+    } else {
+        paramC1 = true;
+        paramC2 = true;
+    }
+
+    if (searchDate) {
+        paramT1 = "TimeEnd"
+        paramT2 = ">=";
+        paramT3 = paramDate;
+    } else {
+        paramT1 = true;
+        paramT2 = "==";
+        paramT3 = true;
+    }
+
+    db.collection("events").where(paramC1, "==", paramC1).where(paramT1, paramT2, paramT3).get()
         .then(allEvents => {
             allEvents.forEach(doc => {
                 var eventTitle = doc.data().title; 
                 var eventDetails = doc.data().body; 
-                var eventCategory = doc.data().imgID; 
+                var eventImgID = doc.data().imgID; 
+                var eventCategory = doc.data().category;
                 var eventTimeStart = doc.data().timeStart.toDate();
                 var eventTimeEnd = doc.data().timeEnd.toDate();
                 var docID = doc.id;
@@ -47,7 +74,7 @@ function populateCardsDynamically() {
                 testEventCard.querySelector('i').id = 'save-' + docID;
                 // this line will call a function to save the hikes to the user's document             
                 testEventCard.querySelector('i').onclick = () => saveBookmark(docID);
-                testEventCard.querySelector('img').src = `./images/${eventCategory}.jpg`;
+                testEventCard.querySelector('img').src = `./images/${eventImgID}.jpg`;
                 eventCardGroup.appendChild(testEventCard);
             })
 
