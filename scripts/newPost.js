@@ -46,7 +46,7 @@ function addEvent() {
         }).then( () => {
           console.log("event ID was added to user's data.");
         });
-        window.location.href = "success.html"; // if success to show success page.
+        window.location.href = "./success.html"; // if success to show success page.
       })
     } else {
       console.log("not logged in. Will not add to database");
