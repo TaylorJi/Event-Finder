@@ -3,6 +3,8 @@ const searchCategory = urlParams.get("category");
 const searchDate = urlParams.get("date");
 const searchTime = urlParams.get("time");
 
+console.log("param list: ", searchCategory , searchDate, searchTime);
+
 
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
@@ -21,73 +23,111 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 
-console.log(searchCategory,searchDate,searchTime)
-
+// Primary page populator function.
 function populateCardsDynamically() {
+    if (searchCategory && searchDate) {
+        let dateParam = makeDate();
+        db.collection("events").where("category", "==", searchCategory).where("timeEnd", ">=", dateParam).get().then(allEvents => {
+            fillPage(allEvents);
+        });
+    } else if (searchCategory) {
+        db.collection("events").where("category", "==", searchCategory).get().then(allEvents => {
+            fillPage(allEvents);
+        });
+    } else if (searchDate) {
+        let dateParam = makeDate();
+        db.collection("events").where("timeEnd", ">=", dateParam).get().then(allEvents => {
+            fillPage(allEvents);
+        });
+    } else {
+        db.collection("events").get().then(allEvents => {
+            fillPage(allEvents);
+        });
+    }
+}
+
+
+// Secondary polulator function. Used by Primary populator.
+function fillPage (allEvents) {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
-    
-    // let paramC1;
-    // let paramC2;
-    // let paramT1;
-    // let paramT2;
-    // let paramT3;
+    allEvents.forEach(doc => {
+        var eventTitle = doc.data().title; 
+        var eventImgID = doc.data().imgID; 
+        var timeStart = doc.data().timeStart.toDate(); 
+        var timeEnd = doc.data().timeEnd.toDate(); 
+        const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric'});
+        const timeFormatter = new Intl.DateTimeFormat('en-US', {hour: 'numeric', minute: 'numeric'});
+        var eventDate  = longEnUSFormatter.format(timeStart);
+        var eventTimeStart  = timeFormatter.format(timeStart);
+        var eventTimeEnd  = timeFormatter.format(timeEnd);
 
-
-    // if (searchCategory) {
-    //     paramC1 = "category"
-    //     paramC2 = searchCategory;
-    // } else {
-    //     paramC1 = true;
-    //     paramC2 = true;
-    // }
-
-    // if (searchDate) {
-    //     paramT1 = "TimeEnd"
-    //     paramT2 = ">=";
-    //     paramT3 = paramDate;
-    // } else {
-    //     paramT1 = true;
-    //     paramT2 = "==";
-    //     paramT3 = true;
-    // }
-
-    db.collection("events")
-    // .where(paramC1, "==", paramC1).where(paramT1, paramT2, paramT3)
-    .get()
-        .then(allEvents => {
-            allEvents.forEach(doc => {
-                var eventTitle = doc.data().title; 
-                var eventDetails = doc.data().body; 
-                var eventImgID = doc.data().imgID; 
-                var eventCategory = doc.data().category;
-                var timeStart = doc.data().timeStart.toDate(); 
-                var timeEnd = doc.data().timeEnd.toDate(); 
-                const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric'});
-                const timeFormatter = new Intl.DateTimeFormat('en-US', {hour: 'numeric', minute: 'numeric'});
-                var eventDate  = longEnUSFormatter.format(timeStart);
-                var eventTimeStart  = timeFormatter.format(timeStart);
-                var eventTimeEnd  = timeFormatter.format(timeEnd);
-
-                var docID = doc.id;
-                let testEventCard = eventCardTemplate.content.cloneNode(true);
-                testEventCard.querySelector('.card-title').innerHTML = eventTitle;
-                testEventCard.querySelector('.card-date').innerHTML = eventDate;
-                testEventCard.querySelector('.card-time-start').innerHTML = eventTimeStart;
-                testEventCard.querySelector('.card-time-end').innerHTML = eventTimeEnd;
-                // testEventCard.querySelector('a').onclick = () => setDocData(docID);
-                testEventCard.querySelector('a').href = "event.html?eventid=" + docID;
-                
-                testEventCard.querySelector('i').id = 'save-' + docID;
-                // this line will call a function to save the hikes to the user's document             
-                testEventCard.querySelector('i').onclick = () => saveBookmark(docID);
-                testEventCard.querySelector('img').src = `./images/${eventImgID}.jpg`;
-                eventCardGroup.appendChild(testEventCard);
-            })
-
-        })
+        var docID = doc.id;
+        let testEventCard = eventCardTemplate.content.cloneNode(true);
+        testEventCard.querySelector('.card-title').innerHTML = eventTitle;
+        testEventCard.querySelector('.card-date').innerHTML = eventDate;
+        testEventCard.querySelector('.card-time-start').innerHTML = eventTimeStart;
+        testEventCard.querySelector('.card-time-end').innerHTML = eventTimeEnd;
+        testEventCard.querySelector('a').href = "event.html?eventid=" + docID;
+        // "i" is bookmark related.
+        testEventCard.querySelector('i').id = 'save-' + docID;
+        testEventCard.querySelector('i').onclick = () => saveBookmark(docID);
+        testEventCard.querySelector('img').src = `./images/${eventImgID}.jpg`;
+        eventCardGroup.appendChild(testEventCard);
+    });
 }
-populateCardsDynamically();
+
+
+// Makes a date from search results to be sent to firestore.
+function makeDate() {
+    let temp;
+    if (searchTime) {
+        console.log("search time Exists.")
+        temp = new Date(searchDate + "T" + searchTime);
+        console.log(typeof(temp), temp);
+    } else {
+        console.log("Only searchDate Exists.")
+        temp = new Date(searchDate);
+        console.log(typeof(temp), temp);
+    }
+    return temp;
+}
+
+
+// Runs when the search button is pressed.
+function findEvents() {
+    let formCategory = document.getElementById("formCategoryBox").value;
+    let formDate = document.getElementById("formDateBox").value;
+    let formTime = document.getElementById("formTimeBox").value;
+    let count = 0;
+
+    console.log(formCategory, formDate, formTime)
+
+    let finalURL = "main.html?";
+    if (formCategory) {
+        if (formCategory != "Any") {
+            finalURL += "category=" + formCategory;
+            count = 1;
+        }
+    }
+    if (formDate) {
+        if (count == 1) {
+            finalURL += "&";
+        }
+        finalURL += "date=" + formDate;
+        count = 1;
+    }
+    if (formTime) {
+        if (count == 1) {
+            finalURL += "&";
+        }
+        finalURL += "time=" + formTime;
+        count = 1;
+    }
+    console.log(finalURL)
+    window.location.href = finalURL;
+}
+
 
 function setDocData(id){
     localStorage.setItem ('docID', id);
@@ -108,37 +148,7 @@ function saveBookmark(docID) {
 }
 
 
-
-function findEvents() {
-    let formCategory = document.getElementById("formCategoryBox").value;
-    let formDate = document.getElementById("formDateBox").value;
-    let formTime = document.getElementById("formTimeBox").value;
-    let count = 0;
-
-    console.log(formCategory, formDate, formTime)
-
-    let finalURL = "main.html?";
-    if (formCategory) {
-        finalURL += "category=" + formCategory;
-        count = 1;
-    }
-    if (formDate) {
-        if (count == 1) {
-            finalURL += "&";
-        }
-        finalURL += "date=" + formDate;
-        count = 1;
-    }
-    if (formTime) {
-        if (count == 1) {
-            finalURL += "&";
-        }
-        finalURL += "time=" + formTime;
-        count = 1;
-    }
+// Gets events and populates into page.
+populateCardsDynamically();
 
 
-    console.log(finalURL)
-    window.location.href = finalURL;
-
-}
