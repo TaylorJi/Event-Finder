@@ -27,32 +27,34 @@ function populateCardsDynamically() {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
     
-    let paramC1;
-    let paramC2;
-    let paramT1;
-    let paramT2;
-    let paramT3;
+    // let paramC1;
+    // let paramC2;
+    // let paramT1;
+    // let paramT2;
+    // let paramT3;
 
 
-    if (searchCategory) {
-        paramC1 = "category"
-        paramC2 = searchCategory;
-    } else {
-        paramC1 = true;
-        paramC2 = true;
-    }
+    // if (searchCategory) {
+    //     paramC1 = "category"
+    //     paramC2 = searchCategory;
+    // } else {
+    //     paramC1 = true;
+    //     paramC2 = true;
+    // }
 
-    if (searchDate) {
-        paramT1 = "TimeEnd"
-        paramT2 = ">=";
-        paramT3 = paramDate;
-    } else {
-        paramT1 = true;
-        paramT2 = "==";
-        paramT3 = true;
-    }
+    // if (searchDate) {
+    //     paramT1 = "TimeEnd"
+    //     paramT2 = ">=";
+    //     paramT3 = paramDate;
+    // } else {
+    //     paramT1 = true;
+    //     paramT2 = "==";
+    //     paramT3 = true;
+    // }
 
-    db.collection("events").where(paramC1, "==", paramC1).where(paramT1, paramT2, paramT3).get()
+    db.collection("events")
+    // .where(paramC1, "==", paramC1).where(paramT1, paramT2, paramT3)
+    .get()
         .then(allEvents => {
             allEvents.forEach(doc => {
                 var eventTitle = doc.data().title; 
