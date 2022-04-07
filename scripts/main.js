@@ -9,19 +9,14 @@ console.log("param list: ", searchCategory , searchDate, searchTime);
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        currentUser = db.collection("users").doc(user.uid); //global
+        currentUser = db.collection("users").doc(user.uid);
         console.log(currentUser);
-        // the following functions are always called when someone is logged in
-        // read_display_Quote();
-        // insertName();
-        // populateCardsDynamically();
     } else {
         // No user is signed in.
         console.log("No user signed in");
         window.location.href = "login.html";
     }
 });
-
 
 // Primary page populator function.
 function populateCardsDynamically() {

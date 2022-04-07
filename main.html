@@ -41,14 +41,13 @@
     <nav id="navbarPlaceholder"></nav>
 
     <section>
-      <img id ="topPicture" src="../images/shows.png"/>
-     
+      <img id="topPicture" src="../images/shows.png" />
     </section>
+
     <div id="filter">
       <fieldset id="fieldset">
         <div class="form-group">
           <legend id="legend">Find an Event</legend>
-
           <label for="formCategoryBox" id="eventCategory123">Category:</label>
           <br>
           <select class="form-control" id="formCategoryBox">
@@ -65,13 +64,13 @@
           <br>
           <label for="formTimeBox" id="eventTime123">Time:</label>
           <input type="time" class="form-control" id="formTimeBox">
-
           <div class="d-flex justify-content-end">
-            <button type="button" id ="buttonFind" class="btn btn-lg btn-primary"  onclick="findEvents()">Find</button>
+            <button type="button" id="buttonFind" class="btn btn-lg btn-primary" onclick="findEvents()">Find</button>
           </div>
         </div>
       </fieldset>
     </div>
+
     <!-- Event Card Templates -->
     <div id="cards">
       <template id="eventCardTemplate">
@@ -86,22 +85,15 @@
           </div>
         </div>
       </template>
+
+  <!-- Container/placeholder for evennt card population -->
       <div class="container">
         <div id="eventCardGroup" class="row row-cols-auto">
         </div>
       </div>
+
     </div>
   </div>
-  <!-- Container/placeholder for card population -->
-
-  <!-- <div class="container">
-    <div id="eventCardGroup" class="row row-cols-auto">
-    </div>
-  </div>
-  </div> -->
-
-  <!-- footer -->
-  <!-- <nav id="footerPlaceholder"></nav> -->
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
@@ -110,8 +102,6 @@
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/main.js"></script>
-
-
 
 </body>
 
