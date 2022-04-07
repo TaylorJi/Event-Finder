@@ -66,7 +66,7 @@ body{
 #container2{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 3.75% 14% 16% 1fr;
+  grid-template-rows: 2% 6% 9% 1fr;
   grid-template-columns: 100%;
 }
 
@@ -75,13 +75,17 @@ body{
   grid-column: 1 / span 1;
 }
 
-#section{
+#topPicture{
   grid-row: 2 / span 1;
-  background-color: rgb(229, 255, 196);
-  background-image: url("../images/shows.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
+  /* background-color: rgb(229, 255, 196); */
+  /* background-image: url("../images/shows.png"); */
+  /* background-size: center/cover fixed; */
+  /* background-repeat: no-repeat; */
+  /* background-position:center; */
+  /* width:100vw; */
+  height: 300px;
+  width: 100%;
+  
 }
 
 #filter{
