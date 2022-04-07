@@ -23,10 +23,10 @@ function populateEventPage() {
         console.log(doc.data().title);
         let testEventPage = eventPageTemplate.content.cloneNode(true);
         testEventPage.querySelector('.eventTitle').innerHTML = eventTitle;
-        testEventPage.querySelector('.eventStart').innerHTML = eventTimeStart;
-        testEventPage.querySelector('.eventEnd').innerHTML = eventTimeEnd;
-        testEventPage.querySelector('.eventDate').innerHTML = eventDate;
-        testEventPage.querySelector('.eventDetails').innerHTML = eventDetails;
+        testEventPage.querySelector('.eventStart').innerHTML = "<b>Time: </b>" + eventTimeStart + " - " +eventTimeEnd;
+
+        testEventPage.querySelector('.eventDate').innerHTML = "<b>Date: </b>" + eventDate;
+        testEventPage.querySelector('.eventDetails').innerHTML = "<b>Event details: </b><br>" + eventDetails;
         testEventPage.querySelector('img').src = `./images/${eventCategory}.jpg`;
         eventPage.appendChild(testEventPage);
     })

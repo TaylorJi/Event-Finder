@@ -65,9 +65,8 @@ function fillPage (allEvents) {
         var docID = doc.id;
         let testEventCard = eventCardTemplate.content.cloneNode(true);
         testEventCard.querySelector('.card-title').innerHTML = eventTitle;
-        testEventCard.querySelector('.card-date').innerHTML = eventDate;
-        testEventCard.querySelector('.card-time-start').innerHTML = eventTimeStart;
-        testEventCard.querySelector('.card-time-end').innerHTML = eventTimeEnd;
+        testEventCard.querySelector('.card-date').innerHTML = "<b>Date: </b>" + eventDate;
+        testEventCard.querySelector('.card-time-start').innerHTML = "<b>Time: </b>" + eventTimeStart + " - " +eventTimeEnd;
         testEventCard.querySelector('a').href = "event.html?eventid=" + docID;
         // "i" is bookmark related.
         testEventCard.querySelector('i').id = 'save-' + docID;
