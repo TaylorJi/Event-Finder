@@ -122,11 +122,12 @@ function findEvents() {
     window.location.href = finalURL;
 }
 
-
+// Setting a document id. 
 function setDocData(id){
     localStorage.setItem ('docID', id);
 }
 
+// Saving event.
 function saveBookmark(docID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(docID)
