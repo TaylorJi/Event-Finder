@@ -4,7 +4,7 @@ const eventID = urlParams.get("eventid");
 
 if (!eventID) {
   console.log("No eventID param detected. Redirecting...")
-  redirect(mainPage);
+  // redirect(mainPage);
 }
 
 

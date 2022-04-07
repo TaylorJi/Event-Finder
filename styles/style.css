@@ -103,46 +103,49 @@ body{
   background-color:#e7c04083;
 }
 
-#category123{
-  margin-left: 15%;
-  padding-top: 1em;
-  padding-bottom:.2em;
+#formCategoryBox{
+  width:85%;
+  margin-left: 7%;
+  padding-top:.8rem;
+  padding-bottom:.8rem;
 }
 
 #eventCategory123{
   width: 70%;
   justify-items: center;
-  margin-left: 15%;
+  margin-left: 9%;
 }
 
-#date123{
-  margin-left: 15%;
-  padding-top:.1em;
-  padding-bottom:.2em;
+#formDateBox{
+  width:85%;
+  margin-left: 7%;
+  padding-top:.8rem;
+  padding-bottom:.8rem;
 }
 
 #eventDate123{
   width: 70%;
   justify-items: center;
-  margin-left: 15%;
+  margin-left: 9%;
 }
 
-#time123{
-  margin-left: 15%;
-  padding-top:.1em;
-  padding-bottom:.2em;
+#formTimeBox{
+  width:85%;
+  margin-left: 7%;
+  padding-top:.8rem;
+  padding-bottom:.8rem;
 }
 
 #eventTime123{
   width: 70%;
   justify-items: center;
-  margin-left: 15%;
-  margin-bottom: 25px;
+  margin-left: 9%;
 }
 
 .btn-primary{
   background-color: #391101;
   border-color: #391101;
+  margin-top:20px;
   margin-bottom: 5%;
   margin-right: 43%;
 }
