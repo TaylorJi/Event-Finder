@@ -47,17 +47,20 @@ function fillPage (allEvents) {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
     allEvents.forEach(doc => {
+        // sets variables from firestore database
+        var docID = doc.id;
         var eventTitle = doc.data().title; 
         var eventImgID = doc.data().imgID; 
         var timeStart = doc.data().timeStart.toDate(); 
         var timeEnd = doc.data().timeEnd.toDate(); 
+        // creates a date formatter
         const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric'});
         const timeFormatter = new Intl.DateTimeFormat('en-US', {hour: 'numeric', minute: 'numeric'});
+           // formats date objects
         var eventDate  = longEnUSFormatter.format(timeStart);
         var eventTimeStart  = timeFormatter.format(timeStart);
         var eventTimeEnd  = timeFormatter.format(timeEnd);
 
-        var docID = doc.id;
         let testEventCard = eventCardTemplate.content.cloneNode(true);
         testEventCard.querySelector('.card-title').innerHTML = eventTitle;
         testEventCard.querySelector('.card-date').innerHTML = "<b>Date: </b>" + eventDate;
@@ -70,7 +73,6 @@ function fillPage (allEvents) {
         eventCardGroup.appendChild(testEventCard);
     });
 }
-
 
 // Makes a date from search results to be sent to firestore.
 function makeDate() {
@@ -86,7 +88,6 @@ function makeDate() {
     }
     return temp;
 }
-
 
 // Runs when the search button is pressed.
 function findEvents() {
