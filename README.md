@@ -17,14 +17,13 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* firebase
 	
 ## Content
 Content of the project folder:
 
 ```
  Top level of project folder: 
-├── .firebaserc              # Firebase remote configure file
 ├── .gitignore               # Git ignore file
 ├── 404.html                 # error HTML file, this is what users see they have a firebase command line error
 ├── editPost.html            # event post edit HTML file, this is what users see when they wannt to edit their 
@@ -33,11 +32,6 @@ Content of the project folder:
                                the event cards
 ├── favouritePage.html       # favourites page HTML file, this is what users see when they click on their saved 
                                events at the profile page
-├── firebase-debug.log       # firebase debug file, this is where coders can go to see errors that have occured
-                               with deploying firebase
-├── firebase.json            # firebase json file, this is where coders can configure the firebase hosting
-├── firebase.indexes.json    # firebase json file, where we can go to manage indexes in firebase cloud firestore
-├── firebase.rules           # firebase rules file, this is where coders can see the cloud firestore rules
 ├── index.html               # landing HTML file, this is what users see when you come to url
 ├── login.html               # login HTML file, this is where users are redirected to when they clicked the login 
                                button
@@ -79,25 +73,34 @@ It has the following subfolders and files:
                                dark-country-trio-lost-dog-street-band-perform-cambridges-sinclair/6549996001/
     /streetperformer.jpg     # retrieved from https://www.flynote.com/destinations/spain/deep-dive/culture_history
 ├── scripts                  # Folder for scripts
-    /authentication.js       # provides the javascript for authennticatinng the user is logged in through firebase
-    /editPost.js             # provides the javascript for editing an already created event
-    /event.js                # provides the javascript for the event details page
-    /firebaseAPI_Team32.js   # javascript to connect the firebase database storage
-    /libraryGeneral.js       # 
-    /main.js                 # 
-    /newPost.js              # 
-    /personalInfo.js         # 
-    /profile.js              # 
-    /saveEvent.js            # 
-    /skeleton.js             # 
+    /editPost.js             # Provides the javascript for editing an already created event
+    /event.js                # Provides the javascript for the event details page
+    /libraryGeneral.js       # Provides the javascript for the edit post and new post html pages
+    /main.js                 # Provides the javascript methods for the main html page
+    /newPost.js              # Provides the javascript methods for thw new post to create new posts
+    /personalInfo.js         # Provides javascript for the personal information page that lets user update and save their
+                               personal information
+    /profile.js              # Provides the javascript for the profile page to populate the profile details
+    /saveEvent.js            # Provides the javascript to save the event
+    /skeleton.js             # Provides a skeleton javascript file
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /index.css               # provides styling to the index html page
+    /mainStyle.css           # provides styling to the main html page
+    /newPost.css             # provides styling to the new post creation html page
+    /personalInfo.css        # provides styling to the personal innformation html page
+    /profileStyle.css        # provides styling to the profile html page
 ├── text                     # Folder for navbar
     /nav.html                # navbar to be inserted into each page
 
 Firebase hosting files: 
-├── .firebaserc...
-
+├── .firebaserc              # Firebase remote configure file
+├── firebaseAPI_Team32.js   # Javascript to connect the firebase database storage
+├── firebase-debug.log       # firebase debug file, this is where coders can go to see errors that have occured
+                               with deploying firebase
+├── firebase.json            # firebase json file, this is where coders can configure the firebase hosting
+├── firebase.indexes.json    # firebase json file, where we can go to manage indexes in firebase cloud firestore
+├── firebase.rules           # firebase rules file, this is where coders can see the cloud firestore rules
+├── authentication.js       # Provides the javascript for authennticatinng the user is logged in through firebase
 
 ```
 
