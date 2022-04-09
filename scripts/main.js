@@ -1,8 +1,14 @@
+// Loaded by main.html
+// Author: Multiple
+//
+
+
+//Gets params to be used by for the data base search.
+// Sam A.
 const urlParams = new URLSearchParams(window.location.search);
 const searchCategory = urlParams.get("category");
 const searchDate = urlParams.get("date");
 const searchTime = urlParams.get("time");
-
 console.log("param list: ", searchCategory , searchDate, searchTime);
 
 
@@ -18,7 +24,10 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+
 // Primary page populator function.
+// Decides what to get from database based on search parameters.
+// Sam A.
 function populateCardsDynamically() {
     if (searchCategory && searchDate) {
         let dateParam = makeDate();
@@ -43,6 +52,8 @@ function populateCardsDynamically() {
 
 
 // Secondary polulator function. Used by Primary populator.
+// Creates display cards, inserts the data in them, and puts them on page.
+// Sam A, Liana D, Taylor?, Michaela?
 function fillPage (allEvents) {
     let eventCardTemplate = document.getElementById("eventCardTemplate");
     let eventCardGroup = document.getElementById("eventCardGroup");
@@ -74,7 +85,9 @@ function fillPage (allEvents) {
     });
 }
 
+
 // Makes a date from search results to be sent to firestore.
+// Sam A.
 function makeDate() {
     let temp;
     if (searchTime) {
@@ -89,7 +102,10 @@ function makeDate() {
     return temp;
 }
 
+
 // Runs when the search button is pressed.
+// Creates parameters based on user selection, attaches to url and refreshes page.
+// Sam A.
 function findEvents() {
     let formCategory = document.getElementById("formCategoryBox").value;
     let formDate = document.getElementById("formDateBox").value;
@@ -123,10 +139,12 @@ function findEvents() {
     window.location.href = finalURL;
 }
 
+
 // Setting a document id. 
 function setDocData(id){
     localStorage.setItem ('docID', id);
 }
+
 
 // Saving event.
 function saveBookmark(docID) {
@@ -146,5 +164,4 @@ function saveBookmark(docID) {
 
 // Gets events and populates into page.
 populateCardsDynamically();
-
 

@@ -1,10 +1,17 @@
+// This is a general libary containing multiple functions that are used by different pages.
+// Author: Sam A.
+//
+
+
 // static definitions
+// Sam A.
 const mainPage = "main.html";
 const indexPage = "index.html";
 const loginPage = "login.html";
 
 
 // function for redirecting pages.
+// Sam A.
 function redirect(page) {
   window.location.href = page;
 }
@@ -33,6 +40,7 @@ function parseTextToDate(dateinput) {
 
 
 // Creates date string from a JS date object, formatted for the date input field.
+// Sam A.
 function parseDateToText(dateOBJ) {
   if (dateOBJ) {
     let year = dateOBJ.getFullYear();
@@ -56,8 +64,7 @@ function parseDateToText(dateOBJ) {
 }
 
 
-
-/*  Doesn't seem to work because async problems. Archiving.
+/*  Doesn't seem to work because async problems. Archiving. Sam A.
 
     function fixZero(number) {
       if (number < 10) {

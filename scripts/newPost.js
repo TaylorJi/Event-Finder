@@ -1,3 +1,8 @@
+// Used by newPost.html
+// Author: Sam A.
+//
+
+
 // Adds an event to firestore using the form fields.
 // Sam A.
 function addEvent() {

@@ -1,10 +1,13 @@
+// USed by editPost.html
+// Author: Sam A.
+//
 const urlParams = new URLSearchParams(window.location.search);
 const eventID = urlParams.get("eventid");
 
 
 if (!eventID) {
   console.log("No eventID param detected. Redirecting...")
-  // redirect(mainPage);
+  // redirect(mainPage); // temporarily commented out so that the page can be accessable. Normally should be active.
 }
 
 

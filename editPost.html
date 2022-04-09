@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!-- Author: Sam A. -->
+
 <html>
 
 <head>
@@ -29,7 +32,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/mainStyle.css">
   <link rel="stylesheet" href="./styles/newPost.css">
 </head>
 
@@ -80,7 +83,7 @@
 
         <div class="d-flex justify-content-end">
           <button type="button" class="btn btn-lg btn-secondary pull-right" style="margin: 0 1rem;"
-            onclick="">Cancel</button>
+            onclick="redirect('./myProfile.html')">Cancel</button>
           <button type="button" class="btn btn-lg btn-primary pull-right" onclick="updateEvent()">Save</button>
         </div>
 
@@ -90,7 +93,6 @@
   <br>
   <br>
   <br>
-
 
 
   <!-- footer -->
@@ -104,9 +106,6 @@
   <script src="./scripts/script.js"></script>
   <script src="./scripts/libraryGeneral.js"></script>
   <script src="./scripts/editPost.js"></script>
-
-
-
 </body>
 
 </html>
